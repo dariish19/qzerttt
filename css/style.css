@@ -69,11 +69,6 @@ header {
     font-size: 14px;
 }
 
-.menu a.active {
-    font-size: 24px;
-    font-weight: 700; 
-}
-
 
 .btn {
     background-color: #5221E6;
@@ -93,7 +88,7 @@ main {
     display: flex;
     align-items: center;
     background-color: black;
-    width: 30%;
+    width: 40%;
     height: 100%;
     position: relative;
 }
