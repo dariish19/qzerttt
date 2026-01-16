@@ -2,124 +2,146 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Sen', sans-serif;
 }
 
-@font-face {
-    font-family: 'Sen';
-    src: url('../fonts/Sen-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Sen';
-    src: url('../fonts/Sen-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Sen';
-    src: url('../fonts/Sen-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Sen';
-    src: url('../fonts/Sen-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Sen';
-    src: url('../fonts/Sen-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
+:root {
+    --bgcolor-dark-gray: #181823;
+    --bgcolor-black: #000000;
+    --bgcolor-purple: #5221E6;
+    --text-grey: #555560;
+    --text-light-grey: #cccccc;
 }
 
 body {
-    font-family: 'Sen', Arial, sans-serif; 
     height: 100vh;
-    position: relative;
-    background-color: #181823;
+    overflow: hidden;
+    background-color: var(--bgcolor-dark-gray);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 header {
-    position: absolute;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100vh;
     width: 100%;
+    position: absolute;
+}
+
+header section:nth-child(1) {
+    background-color: var(--bgcolor-black);
+    padding: 32px 50px;
+}
+
+header section:nth-child(1) img {
+    width: auto;
+    height: auto;
+}
+
+header section:nth-child(2) {
+    background-color: var(--bgcolor-dark-gray);
+    padding: 32px 50px;
+}
+
+header nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 30px 50px;
+    position: relative; 
     z-index: 100;
 }
 
-.logo {
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
+header nav > a {
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 24px;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 14px;
-}
-
-
-.btn {
-    background-color: #5221E6;
-    padding: 35px 25px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-main {
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-
-.left {
+header nav ul {
+    list-style-type: none;
     display: flex;
     align-items: center;
-    background-color: black;
-    width: 40%;
-    height: 100%;
-    position: relative;
 }
 
-.image {
+header nav ul li {
+    margin-left: 10px;
+}
+
+header nav ul li a {
+    font-size: 14px;
+    opacity: 0.8;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
+header nav ul li:not(.active) a:hover {
+    background-color: var(--bgcolor-purple);
+    opacity: 1;
+    font-weight: 700;
+}
+
+header nav ul li.active a {
+    background-color: var(--bgcolor-purple);
+    font-weight: 700;
+    opacity: 1;
+}
+
+section.header-robin {
     position: absolute;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    pointer-events: none;
 }
 
-.right {
-    width: 60%;
-    color: white;
+section.header-robin img {
+    width: auto;
+    height: 85%;
+    justify-self: center;
+    align-self: center;
+    margin-left: 20%;
+}
+
+section.header-robin div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 100px; 
+    align-items: flex-end;
+    padding-right: 4vw;
     position: relative;
-    z-index: 10; 
+    left: -70px;
+    width: 960px;
 }
 
-h1 {
-    font-size: 78px;
+section.header-robin div h1 {
+    color: white;
+    font-size: 50px;
+    line-height: 1.1;
     margin-bottom: 20px;
+    text-align: left;
+
 }
 
-span {
-    opacity: 50%;
+section.header-robin div h1 span {
+    color: var(--text-grey);
+    display: block;
 }
 
-p {
-    color: #cccccc;
-    font-size: 18px;
-    width: 70%;
+section.header-robin div p {
+    color: var(--text-light-grey);
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    
 }
